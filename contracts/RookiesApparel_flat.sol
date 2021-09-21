@@ -1457,7 +1457,10 @@ contract RookiesApparel is ERC721Enumerable, Ownable {
         publicMintIsActive = !publicMintIsActive;
     }
 
-    function updateRookieContract(address _contractAddress) external onlyOwner {
+    function updateRookieContract(RookieInterface _contractAddress)
+        external
+        onlyOwner
+    {
         rookieContract = RookieInterface(_contractAddress);
     }
 
