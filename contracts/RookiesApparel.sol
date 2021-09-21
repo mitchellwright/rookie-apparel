@@ -38,7 +38,7 @@ contract RookiesApparel is ERC721Enumerable, Ownable {
         external
         onlyOwner
     {
-        rookieContract = RookieInterface(_contractAddress);
+        rookieContract = _contractAddress;
     }
 
     function _baseURI() internal view virtual override returns (string memory) {
