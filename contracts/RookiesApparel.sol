@@ -17,8 +17,8 @@ contract RookiesApparel is ERC721Enumerable, Ownable {
     string private _baseURIExtended;
 
     // Rookie Contract Interface
-    address public rookieAddress = 0xb1Cea9cD6B7ccBa50B30859b591076A2CFba487F;
-    RookieInterface public rookieContract = RookieInterface(rookieAddress);
+    RookieInterface public rookieContract =
+        RookieInterface(0x56CC0dc0275442892FbEDD408393E079F837eBBA);
 
     constructor(string memory metadataBaseURI)
         ERC721("Rookies Apparel", "APPAREL")
@@ -35,7 +35,7 @@ contract RookiesApparel is ERC721Enumerable, Ownable {
     }
 
     function updateRookieContract(address _contractAddress) external onlyOwner {
-        rookieAddress = _contractAddress;
+        rookieContract = RookieInterface(_contractAddress);
     }
 
     function _baseURI() internal view virtual override returns (string memory) {
