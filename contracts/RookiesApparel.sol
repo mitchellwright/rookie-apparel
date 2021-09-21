@@ -56,7 +56,7 @@ contract RookiesApparel is ERC721Enumerable, Ownable {
     function mint(uint256 _rookieId) external {
         require(publicMintIsActive, "Public minting is not active");
         require(
-            _rookieId >= 0 && _rookieId < 10000,
+            _rookieId >= 1 && _rookieId < 10000,
             "Rookie ID does not exist"
         );
 
@@ -68,7 +68,7 @@ contract RookiesApparel is ERC721Enumerable, Ownable {
 
         for (uint256 i = 0; i < _rookieIds.length; i++) {
             require(
-                _rookieIds[i] >= 0 && _rookieIds[i] < 10000,
+                _rookieIds[i] >= 1 && _rookieIds[i] < 10000,
                 "Rookie ID does not exist"
             );
             _safeMint(_msgSender(), _rookieIds[i]);
@@ -78,7 +78,7 @@ contract RookiesApparel is ERC721Enumerable, Ownable {
     function mintWithRookie(uint256 _rookieId) external {
         require(privateMintIsActive, "Private minting is not active");
         require(
-            _rookieId >= 0 && _rookieId < 10000,
+            _rookieId >= 1 && _rookieId < 10000,
             "Rookie ID does not exist"
         );
         require(
@@ -94,7 +94,7 @@ contract RookiesApparel is ERC721Enumerable, Ownable {
 
         for (uint256 i = 0; i < _rookieIds.length; i++) {
             require(
-                _rookieIds[i] >= 0 && _rookieIds[i] < 10000,
+                _rookieIds[i] >= 1 && _rookieIds[i] < 10000,
                 "Rookie ID does not exist"
             );
             require(
